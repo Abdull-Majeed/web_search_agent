@@ -21,15 +21,11 @@ It’s designed for **researchers, students, journalists, and developers** who n
 
 ---
 
-## 🧩 Project Structure
+## 🧩 Project UI
 
-📁 web-research-agent-main
-│
-├── research_agent.py # Core research logic (Gemini + SerpAPI integration)
-├── chat_ui.py # Streamlit conversational interface
-├── requirements.txt # Dependencies
-├── .env.example # Example environment variable file
-└── README.md # Project documentation (this file)
+<img width="1746" height="893" alt="image" src="https://github.com/user-attachments/assets/c9cc3c26-61d3-4711-8896-5023cc462524" />
+
+
 
 ## ⚙️ Installation Guide
 
