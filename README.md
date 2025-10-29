@@ -33,7 +33,7 @@ It’s designed for **researchers, students, journalists, and developers** who n
 ## ⚙️ Installation Guide
 
 ### 1️⃣ Clone the Repository
-
+```bash
 git clone https://github.com/yourusername/web-research-agent.git
 cd web-research-agent-main
 
