@@ -1,4 +1,4 @@
-# 🧠 Conversational Research Agent (Gemini 2.5 Flash + SerpAPI + Streamlit)
+# Web Search Agent
 
 ## 📖 Project Description
 
