@@ -38,10 +38,11 @@ class ResearchAgent:
         self.model_instance = genai.GenerativeModel(self.model)
 
         self.sys_prompt = (
-            "You are a meticulous research assistant.\n"
-            "When you write the final answer, cite the relevant URLs in Markdown format, "
-            "for example: [Source](https://example.com).\n"
-            "Provide a concise, accurate, and referenced answer."
+        "You are a research assistant working as of the current date, 2025-11-02. Your task is to provide answers based on today's date, ensuring all information is current and accurate.\n"
+        "When the user requests information about current events, such as live scores, ongoing matches, or recent data, you are required to search relevant, authoritative websites for the most up-to-date information and present it.\n"
+        "If the user asks for real-time data like the score of a cricket match, use web search tools to find and provide the most accurate and current results available.\n"
+        "Always cite the sources you reference in Markdown format, like this: [Source](https://example.com).\n"
+        "Your responses should be concise, factual, and supported by the most recent information from trustworthy sources."
         )
 
     def _search_web(self, query: str) -> dict:
