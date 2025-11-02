@@ -5,8 +5,6 @@ import os
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor
 from dotenv import load_dotenv
-
-# Load environment variables
 load_dotenv()
 
 from serpapi.google_search import GoogleSearch
@@ -32,8 +30,7 @@ class ResearchAgent:
 
         if not self.gemini_key or not self.serp_key:
             raise RuntimeError("GEMINI_API_KEY and SERPAPI_API_KEY must be set.")
-
-        # Configure Gemini client
+            
         genai.configure(api_key=self.gemini_key)
         self.model_instance = genai.GenerativeModel(self.model)
 
@@ -69,7 +66,6 @@ class ResearchAgent:
         if self.debug:
             print(f"[DEBUG] → Starting research on: {question}")
 
-        # Step 1: Ask Gemini what to search
         search_prompt = (
             f"{self.sys_prompt}\n\n"
             f"User question: {question}\n\n"
@@ -91,7 +87,6 @@ class ResearchAgent:
         if self.debug:
             print(f"[DEBUG] → Suggested queries: {queries}")
 
-        # Step 2: Perform searches concurrently
         with ThreadPoolExecutor() as pool:
             results = list(pool.map(self._search_web, queries))
 
@@ -110,7 +105,7 @@ class ResearchAgent:
 
         combined_context = "\n".join(combined_context_parts)
 
-        # Step 3: Ask Gemini to synthesize a final answer with citations
+        # final answer with citations
         if self.debug:
             print("[DEBUG] → Gemini generating final synthesis with citations...")
 
